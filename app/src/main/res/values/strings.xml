@@ -100,6 +100,10 @@ I Will Make This <font color="#D69E3A"><b>PLANET</b></font> a Better Place,<br/>
 &amp; I Will Gain The <font color="#D69E3A"><b>POWER</b></font> of Life!
 ]]></string>
 
+    <string name="search">Search</string>
+    <string name="search_speciality">Search Speciality</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
 </resources>
 
 

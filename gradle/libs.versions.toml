@@ -1,11 +1,11 @@
 [versions]
-agp = "8.10.0"
+agp = "8.5.1"
 androidGifDrawable = "1.2.29"
 ccp = "2.7.3"
 datastorePreferences = "1.1.4"
 koinAndroid = "3.4.0"
 kotlin = "2.0.21"
-coreKtx = "1.16.0"
+coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"

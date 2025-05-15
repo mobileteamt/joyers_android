@@ -16,15 +16,18 @@ import android.view.animation.AccelerateInterpolator
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.synapse.joyers.R
+import com.synapse.joyers.ui.signup.adapter.TitleNameAdapter
 
 class CustomRoundedDialog : DialogFragment() {
 
     private lateinit var expandableContent: LinearLayout
-    private lateinit var toggleButton: Button
+    private lateinit var toggleContent: TextView
     private var isExpanded = false
-    private var initialHeight = 0 // To store the initial height of the expandable content
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,16 +42,26 @@ class CustomRoundedDialog : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         expandableContent = view.findViewById(R.id.expandable_content)
-        toggleButton = view.findViewById(R.id.btn_toggle_content)
+        toggleContent = view.findViewById(R.id.tv_toggle_content)
         val closeButton = view.findViewById<ImageButton>(R.id.btn_close_dialog)
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_titles)
+        val rvSubTitles = view.findViewById<RecyclerView>(R.id.rv_sub_titles)
+        val titles = listOf("Baby Joyer", "Couple", "Family", "Friends","Student", "Ghost", "Nick Name", "Pet")
+        val subTitles = listOf("Doctoral Student", "Master’s Student", "Bachelor’s Student")
+
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = TitleNameAdapter(titles)
+
+        rvSubTitles.layoutManager = LinearLayoutManager(context)
+        rvSubTitles.adapter = TitleNameAdapter(subTitles)
 
         // Measure the height of the expandable content after layout
         expandableContent.post {
-            initialHeight = expandableContent.height
             expandableContent.visibility = View.GONE // Initially hidden
         }
 
-        toggleButton.setOnClickListener {
+        toggleContent.setOnClickListener {
             toggleContentVisibility()
         }
 
@@ -77,7 +90,8 @@ class CustomRoundedDialog : DialogFragment() {
 
     private fun expandContent() {
         expandableContent.visibility = View.VISIBLE
-        val animator = ValueAnimator.ofInt(0, initialHeight)
+        val targetHeight = getMeasuredHeight(expandableContent)
+        val animator = ValueAnimator.ofInt(0, targetHeight)
         animator.addUpdateListener { animation ->
             expandableContent.layoutParams.height = animation.animatedValue as Int
             expandableContent.requestLayout()
@@ -85,7 +99,7 @@ class CustomRoundedDialog : DialogFragment() {
         animator.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 isExpanded = true
-                toggleButton.text = "Hide"
+                toggleContent.text = context!!.getString(R.string.hide)
             }
         })
         animator.duration = 300 // Adjust duration as needed
@@ -102,10 +116,19 @@ class CustomRoundedDialog : DialogFragment() {
             override fun onAnimationEnd(animation: Animator) {
                 expandableContent.visibility = View.GONE
                 isExpanded = false
-                toggleButton.text = "Show More"
+                toggleContent.text = context!!.getString(R.string.show)
             }
         })
         animator.duration = 300 // Adjust duration as needed
         animator.start()
     }
+
+    private fun getMeasuredHeight(view: View): Int {
+        view.measure(
+            View.MeasureSpec.makeMeasureSpec((view.parent as View).width, View.MeasureSpec.AT_MOST),
+            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        )
+        return view.measuredHeight
+    }
+
 }

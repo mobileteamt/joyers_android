@@ -1,0 +1,25 @@
+package com.synapse.joyers.ui.loginforgot
+
+import android.app.Application
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.synapse.joyers.apiData.Repository
+import com.synapse.joyers.apiData.response.Post
+import com.synapse.joyers.utils.NetWorkResult
+import com.synapse.joyers.viewmodel.BaseViewModel
+import kotlinx.coroutines.launch
+
+class LoginViewModel(private val repository: Repository, application: Application): BaseViewModel(application) {
+
+    private val _responsePosts: MutableLiveData<NetWorkResult<List<Post>>> = MutableLiveData()
+    val responsePosts: LiveData<NetWorkResult<List<Post>>> = _responsePosts
+
+
+    // get data from api
+    fun getPostsList() = viewModelScope.launch {
+        repository.getPostList(context).collect { values ->
+            _responsePosts.value = values
+        }
+    }
+}

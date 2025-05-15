@@ -1,0 +1,56 @@
+package com.synapse.joyers.ui
+
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.synapse.joyers.R
+import com.synapse.joyers.apiData.ApiResultHandler
+import com.synapse.joyers.apiData.response.Post
+import com.synapse.joyers.databinding.ActivityMainBinding
+import com.synapse.joyers.viewmodel.MainViewModel
+import org.koin.android.ext.android.inject
+
+class MainActivity : AppCompatActivity() {
+
+    private val mainViewModel: MainViewModel by inject()
+    private lateinit var activityMainBinding: ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activityMainBinding = DataBindingUtil.setContentView(
+            this@MainActivity,
+            R.layout.activity_main
+        )
+        observeApiPostData()
+        mainViewModel.getPostsList()
+    }
+
+    private fun observeApiPostData() {
+        try {
+            mainViewModel.responsePosts.observe(this) { response ->
+                val apiResultHandler = ApiResultHandler<List<Post>>(
+                    this@MainActivity,
+                    onLoading = {
+                        showProgress(true)
+                    },
+                    onSuccess = { data ->
+                        showProgress(false)
+                        Log.e("aaa", data.toString())
+                    },
+                    onFailure = {
+                        showProgress(false)
+                    })
+                apiResultHandler.handleApiResult(response)
+            }
+        } catch (e: Exception) {
+            e.stackTrace
+        }
+    }
+
+    private fun showProgress(isShown: Boolean) =
+        if (isShown) activityMainBinding.progress.visibility =
+            View.VISIBLE else activityMainBinding.progress.visibility = View.GONE
+
+}

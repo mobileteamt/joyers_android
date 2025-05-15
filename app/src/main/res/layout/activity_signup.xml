@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <!-- Logo -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:contentDescription="@string/joyers"
+                android:src="@drawable/joyer_logo" />
+
+            <!-- Login Label -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:text="@string/sign_up"
+                android:textColor="@color/light_black"
+                android:textFontWeight="600"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/linear_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/light_grey_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="15dp"
+                    android:contentDescription="@string/joyers"
+                    android:src="@drawable/user_icon" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/username"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".70"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/onlyUserName"
+                    android:padding="15dp"
+                    android:lines="1"
+                    android:textColor="@color/light_black"
+                    android:textFontWeight="400"
+                    android:textSize="16sp" />
+
+                <!-- close and reload-->
+                <LinearLayout
+                    android:id="@+id/close_n_reload"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".30"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/close_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/joyers"
+                        android:paddingStart="10dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="15dp"
+                        android:src="@drawable/cancel_grey" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/reload_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/joyers"
+                        android:paddingStart="12dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="15dp"
+                        android:src="@drawable/reload" />
+
+                </LinearLayout>
+
+                <!--gif loader-->
+                <LinearLayout
+                    android:id="@+id/gif_loader"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".30"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:visibility="invisible" />
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12dp"
+                        android:src="@drawable/loader_gif" />
+                </LinearLayout>
+
+                <!-- green tick -->
+                <LinearLayout
+                    android:id="@+id/linear_green_tick"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".30"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="33dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:visibility="invisible" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/joyers"
+                        android:paddingStart="12dp"
+                        android:paddingTop="15dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="15dp"
+                        android:src="@drawable/green_tick" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--error textview-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/username_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <!-- Username and Email Input Field -->
+            <LinearLayout
+                android:id="@+id/linear_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/light_grey_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:id="@+id/linear_email_error"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".85"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:contentDescription="@string/joyers"
+                        android:src="@drawable/mail" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edit_email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/email"
+                        android:inputType="text"
+                        android:padding="15dp"
+                        android:textColor="@color/light_black"
+                        android:textFontWeight="400"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/clear_email"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="3dp"
+                        android:contentDescription="@string/joyers"
+                        android:padding="3dp"
+                        android:src="@drawable/cancel_grey"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".15"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/joyers"
+                        android:padding="12dp"
+                        android:src="@drawable/telephone_icon_golden" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--error email textview-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/email_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <!-- Phone Input Field -->
+            <LinearLayout
+                android:id="@+id/linear_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/light_grey_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:id="@+id/linear_phone_error"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".85"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="15dp"
+                        android:contentDescription="@string/joyers"
+                        android:src="@drawable/telephone_grey" />
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:ccp_arrowSize="1dp"
+                        app:ccp_defaultNameCode="US"
+                        app:ccp_showFlag="true"
+                        app:ccp_showNameCode="false"
+                        app:ccp_showPhoneCode="true"
+                        app:ccp_textSize="16sp" />
+
+                    <View
+                        android:layout_width=".5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/grey" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edit_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/phone_number"
+                        android:inputType="number"
+                        android:padding="15dp"
+                        android:textColor="@color/light_black"
+                        android:textFontWeight="400"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/clear_phone"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="3dp"
+                        android:contentDescription="@string/joyers"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:src="@drawable/cancel_grey"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_user"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".15"
+                    android:contentDescription="@string/joyers"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:src="@drawable/user_icon_golden" />
+
+
+            </LinearLayout>
+
+            <!-- error phone textview -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneNumber_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/verify_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+            <!-- verify code view-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="58dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="58dp"
+                android:background="@drawable/light_grey_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/verification_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:hint="@string/enter_verification_code"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:padding="10dp"
+                    android:textColor="@color/light_black"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/clear_verification"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="3dp"
+                    android:contentDescription="@string/joyers"
+                    android:padding="3dp"
+                    android:src="@drawable/cancel_grey"
+                    android:visibility="invisible" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/code_send_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <!-- verify and resend Button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_verify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/golden_background"
+                    android:text="@string/verify"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_resend_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/black_background"
+                    android:text="@string/resend_code"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Password Input Field -->
+            <LinearLayout
+                android:id="@+id/linear_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/light_grey_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="15dp"
+                    android:contentDescription="@string/joyers"
+                    android:src="@drawable/password_icon" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".82"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/password"
+                    android:padding="15dp"
+                    android:textColor="@color/light_black"
+                    android:textFontWeight="400"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/password_toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".19"
+                    android:contentDescription="@string/joyers"
+                    android:padding="15dp"
+                    android:src="@drawable/password_hide"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <!-- progress bar -->
+            <LinearLayout
+                android:id="@+id/progress_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_strength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:padding="3dp"
+                    android:textFontWeight="@integer/semiBold"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <ProgressBar
+                    android:id="@+id/strengthProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/progress_strength_drawable" />
+
+            </LinearLayout>
+
+            <!-- Confirm password Input Field -->
+            <LinearLayout
+                android:id="@+id/linear_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/light_grey_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="15dp"
+                    android:contentDescription="@string/joyers"
+                    android:src="@drawable/password_icon" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_confirm_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".82"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/confirm_password"
+                    android:padding="15dp"
+                    android:textColor="@color/light_black"
+                    android:textFontWeight="400"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/confirm_password_toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".19"
+                    android:contentDescription="@string/joyers"
+                    android:padding="15dp"
+                    android:src="@drawable/password_hide"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <!-- Login Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:background="@drawable/golden_background"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="@string/already_a_joyer"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="@string/login"
+                android:textColor="@color/golden"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

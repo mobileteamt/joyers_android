@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Joyers</string>
+    <string name="joyers">Joyers_image</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username_email">Username / Email</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or">Or</string>
+    <string name="join_with">Join With</string>
+    <string name="a_new_joyer">A New Joyer?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+</resources>

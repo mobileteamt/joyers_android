@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.signup.PageTwoFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="25dp"
+                tools:context=".ui.signup.PageOneFragment">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/joyer_status"
+                    android:textColor="@color/light_black"
+                    android:textFontWeight="600"
+                    android:textSize="18sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/classic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_light_gray"
+                    android:gravity="center"
+                    android:padding="17dp"
+                    android:text="@string/classic"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="16sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/celebrity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_light_gray"
+                    android:gravity="center"
+                    android:padding="17dp"
+                    android:text="@string/celebrity"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="16sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/proficient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_light_gray"
+                    android:gravity="center"
+                    android:padding="17dp"
+                    android:text="@string/proficient"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="16sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/leader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_light_gray"
+                    android:gravity="center"
+                    android:padding="17dp"
+                    android:text="@string/leader"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="16sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/provider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_light_gray"
+                    android:gravity="center"
+                    android:padding="17dp"
+                    android:text="@string/provider"
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/dashed_line" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/clarifications"
+                    android:textColor="@color/light_black"
+                    android:textFontWeight="600"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/curved_light_grey"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title1"
+                        android:textColor="@color/light_black"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/classic_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:autoLink="none"
+                        android:text="@string/classic_text"
+                        android:textColor="@color/light_black"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/celebrity_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:autoLink="none"
+                        android:text="@string/celebrity_text"
+                        android:textColor="@color/light_black"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/proficient_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:autoLink="none"
+                        android:text="@string/proficient_text"
+                        android:textColor="@color/light_black"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/leader_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:autoLink="none"
+                        android:text="@string/leader_text"
+                        android:textColor="@color/light_black"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/provider_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:autoLink="none"
+                        android:text="@string/provider_text"
+                        android:textColor="@color/light_black"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/title2"
+                        android:textColor="@color/light_black"
+                        android:textSize="16sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/title3"
+                        android:textColor="@color/light_black"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/title4"
+                        android:textColor="@color/light_black"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/fab"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="56dp"
+            android:background="@drawable/round_golden"
+            android:contentDescription="@string/floating_action_button"
+            app:srcCompat="@drawable/outline_arrow_forward" />
+    </FrameLayout>
+</layout>

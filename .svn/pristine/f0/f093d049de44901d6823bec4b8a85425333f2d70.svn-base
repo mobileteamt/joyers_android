@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Joyers</string>
+    <string name="joyers">Joyers_image</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username_email">Username / Email</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or">Or</string>
+    <string name="join_with">Join With</string>
+    <string name="a_new_joyer">A New Joyer?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="reset_password_in_two_steps">Reset password in two steps.</string>
+    <string name="send_verification_code">Send Verification Code :</string>
+    <string name="email">Email</string>
+    <string name="sms">SMS</string>
+    <string name="next">Next</string>
+    <string name="enter_verification_code">Enter Verification Code</string>
+    <string name="already_a_joyer">Already a Joyer?</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="verify">Verify</string>
+    <string name="email_sent">We have sent a code to your email</string>
+    <string name="number_sent">We have sent a code to your phone number</string>
+
+
+    <!-- font weight -->
+    <integer name="normal">400</integer>
+    <integer name="bold">700</integer>
+    <integer name="light">300</integer>
+    <integer name="thin">100</integer>
+    <integer name="medium">500</integer>
+    <integer name="semiBold">600</integer>
+    <integer name="extraBold">800</integer>
+    <integer name="extraLight">200</integer>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="onlyUserName">\@username</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="invalidEmail">Invalid email address\n</string>
+    <string name="weak">Weak</string>
+    <string name="good">Good</string>
+    <string name="strong">Strong</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="upload_picture">Upload Picture</string>
+    <string name="header">Header</string>
+    <string name="name">Name*</string>
+    <string name="joyer_name">Joyer Name</string>
+    <string name="joyer_location">Joyer Location*</string>
+    <string name="select_location">Select Location</string>
+    <string name="skip">Skip</string>
+    <string name="joyer_status">Joyer Status</string>
+    <string name="identity">Identity</string>
+    <string name="status">Status</string>
+    <string name="classic">Classic</string>
+    <string name="celebrity">Celebrity</string>
+    <string name="proficient">Proficient</string>
+    <string name="leader">Leader</string>
+    <string name="provider">Provider</string>
+    <string name="clarifications">Clarifications</string>
+    <string name="title1">Joyers are categorized into different statuses based on their titles, which determine their roles and functionalities within the app. Here is an overview of these statuses:</string>
+    <string name="celebrity_text"><![CDATA[<font color="#D69E3A">Celebrity</font> : Celebrities are Joyers recognized or certified by a local or international organization.]]></string>
+    <string name="proficient_text"><![CDATA[<font color="#D69E3A">Proficient</font> : Proficient Joyers are professionals or individuals skilled in a specific field.]]></string>
+    <string name="leader_text"><![CDATA[<font color="#D69E3A">Leader</font> : Leaders are Joyers holding a leadership position.]]></string>
+    <string name="provider_text"><![CDATA[<font color="#D69E3A">Provider</font> : Providers are organizations or companies offering products or services.]]></string>
+    <string name="classic_text"><![CDATA[<font color="#D69E3A">Classic</font> : Classic Joyers are registered with a social title rather than a professional title.]]></string>
+    <string name="title2">Based on this classification, Joyers are registered under either social or professional titles, which correspond to one of five statuses: social titles fall under the <b>Classic</b> status, while professional titles fall under <b>Celebrity, Proficient, Leader,</b> or <b>Provider</b> statuses.</string>
+    <string name="title3">In light of these classifications, <b>Classic</b> Joyers have access to all social and professional features of the Joyers app, with the exception of offering or selling products and services online. They can request or purchase products and services from other Joyers but are not permitted to sell them. Conversely, Joyers with the <b>Celebrity, Proficient, Leader,</b> or <b>Provider</b> status can access all social and professional features of the Joyers app, including the ability to offer and sell products and services online to other Joyers.</string>
+    <string name="title4">Together, these statuses ensure every Joyer has access to features suited to their role or expertise.\n</string>
+
+</resources>
+
+
+

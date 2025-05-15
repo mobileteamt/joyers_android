@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_popup_rounded_top"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <View
+        android:layout_width="58dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/grey" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="@string/join_with"
+        android:textAlignment="center"
+        android:textFontWeight="400"
+        android:textSize="24sp" />
+
+    <!-- Facebook Button -->
+    <LinearLayout
+        android:id="@+id/btn_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/light_grey_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:src="@drawable/facebook" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/facebook"
+            android:textFontWeight="400"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:src="@drawable/facebook"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_google"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/light_grey_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:src="@drawable/google" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/google"
+            android:textFontWeight="400"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:src="@drawable/facebook"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <!-- Repeat for Google and Apple -->
+
+</LinearLayout>

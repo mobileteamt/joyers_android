@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_close_dialog"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="top|center_horizontal"
+        android:background="@drawable/round_golden"
+        android:elevation="8dp"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" /> <!-- Add elevation to make it appear floating -->
+
+    <!-- Main Dialog Content Container -->
+    <LinearLayout
+        android:id="@+id/dialog_content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/light_grey_background"
+        android:orientation="vertical"
+        android:padding="16dp"> <!-- Add margin top to make space for the cross button -->
+
+        <!-- Your Dialog Content -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is the main dialog content."
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <!-- Expandable Content (initially hidden) -->
+        <LinearLayout
+            android:id="@+id/expandable_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="This is the expanded content that will be shown/hidden."
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Show More/Hide Button -->
+        <Button
+            android:id="@+id/btn_toggle_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="Show More" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

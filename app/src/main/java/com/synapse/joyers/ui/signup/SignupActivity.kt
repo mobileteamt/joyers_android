@@ -1,8 +1,11 @@
 package com.synapse.joyers.ui.signup
 
 import android.content.Intent
+import android.graphics.BlendMode
+import android.graphics.BlendModeColorFilter
 import android.graphics.PorterDuff
 import android.graphics.drawable.LayerDrawable
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -196,7 +199,14 @@ class SignupActivity : AppCompatActivity() {
 
         val drawable = binding.strengthProgressBar.progressDrawable.mutate()
         val clipDrawable = (drawable as LayerDrawable).findDrawableByLayerId(android.R.id.progress)
-        clipDrawable.setColorFilter(color.toColorInt(), PorterDuff.Mode.SRC_IN)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            clipDrawable.colorFilter = BlendModeColorFilter(color.toColorInt(), BlendMode.SRC_IN)
+        } else {
+            @Suppress("DEPRECATION")
+            clipDrawable.setColorFilter(color.toColorInt(), PorterDuff.Mode.SRC_IN)
+        }
+
         binding.strengthProgressBar.progressDrawable = drawable
     }
 }

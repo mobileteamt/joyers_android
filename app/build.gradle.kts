@@ -89,10 +89,4 @@ dependencies {
     implementation(libs.androidx.media3.ui)
 
 
-    //image picker
-    implementation(libs.fishbun)
-    //implementation(libs.coil)
-    implementation(libs.glide)
-
-
 }

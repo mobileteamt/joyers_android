@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,26 +24,31 @@
                 android:textFontWeight="600"
                 android:textSize="18sp" />
 
-            <androidx.cardview.widget.CardView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="270dp"
                 android:layout_marginTop="10dp"
-                card_view:cardBackgroundColor="@color/gery_light"
-                card_view:cardCornerRadius="5dp"
-                card_view:cardElevation="1dp">
+                android:src="@drawable/light_grey_background">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/header_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.2"
+                    android:scaleType="centerCrop" />
 
                 <FrameLayout
                     android:layout_width="200dp"
                     android:layout_height="200dp"
-                    android:layout_gravity="center">
+                    android:layout_centerInParent="true">
 
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/profile_image"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
                         android:background="@drawable/white_circle"
+                        android:scaleType="centerCrop"
                         app:shapeAppearanceOverlay="@style/CircleImageStyle" />
 
                     <LinearLayout
@@ -76,11 +81,12 @@
                 </FrameLayout>
 
                 <LinearLayout
+                    android:id="@+id/header_image_picker"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:layout_gravity="end"
                     android:layout_margin="15dp"
-                    android:gravity="center"
                     android:orientation="vertical">
 
                     <FrameLayout
@@ -89,27 +95,22 @@
                         android:layout_gravity="center">
 
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/header_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/white_circle" />
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/white_circle" />
 
                         <!-- Circular ImageView inside CardView -->
                         <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="25dp"
-                            android:layout_height="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:scaleType="center"
                             android:src="@drawable/camera_inside_color" />
 
 
                     </FrameLayout>
-
-
-
-
 
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -122,7 +123,7 @@
                         android:textSize="11sp" />
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            </RelativeLayout>
 
 
             <androidx.appcompat.widget.AppCompatTextView

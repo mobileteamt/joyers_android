@@ -1,0 +1,30 @@
+package com.synapse.joyers.apiData
+
+import com.synapse.joyers.apiData.request.ForgotPasswordRequest
+import com.synapse.joyers.apiData.request.LoginRequest
+import com.synapse.joyers.apiData.request.VerifyResetCodeRequest
+import com.synapse.joyers.apiData.response.ForgotPasswordResponse
+import com.synapse.joyers.apiData.response.LoginResponse
+import com.synapse.joyers.apiData.response.VerifyResetCodeResponse
+import retrofit2.Call
+import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+
+interface ApiService {
+
+    @POST("backend/api/auth/login")
+    suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
+
+    @POST("backend/api/password/forgot")
+    suspend fun forgotPassword(
+        @Body request: ForgotPasswordRequest
+    ): Response<ForgotPasswordResponse>
+
+    @POST("backend/api/password/verify-reset")
+    suspend fun verifyResetCode(
+        @Body request: VerifyResetCodeRequest
+    ): Response<VerifyResetCodeResponse>
+
+}

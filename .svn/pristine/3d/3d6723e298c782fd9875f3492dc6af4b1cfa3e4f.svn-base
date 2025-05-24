@@ -1,0 +1,35 @@
+package com.synapse.joyers.apiData
+
+import android.content.Context
+import com.synapse.joyers.apiData.request.ForgotPasswordRequest
+import com.synapse.joyers.apiData.request.LoginRequest
+import com.synapse.joyers.apiData.request.VerifyResetCodeRequest
+import com.synapse.joyers.apiData.response.ForgotPasswordResponse
+import com.synapse.joyers.apiData.response.LoginResponse
+import com.synapse.joyers.apiData.response.VerifyResetCodeResponse
+import com.synapse.joyers.utils.NetWorkResult
+import kotlinx.coroutines.flow.Flow
+
+class Repository(private val remoteDataSource: RemoteDataSource) {
+
+     suspend fun login(context: Context, request: LoginRequest): Flow<NetWorkResult<LoginResponse>> {
+        return toResultFlow(context){
+            remoteDataSource.login(request)
+        }
+    }
+
+    suspend fun forgotPassword(context: Context, request: ForgotPasswordRequest): Flow<NetWorkResult<ForgotPasswordResponse>> {
+        return toResultFlow(context){
+            remoteDataSource.forgotPassword(request)
+        }
+    }
+
+    suspend fun verifyResetCode(context: Context, request: VerifyResetCodeRequest): Flow<NetWorkResult<VerifyResetCodeResponse>> {
+        return toResultFlow(context){
+            remoteDataSource.verifyResetCode(request)
+        }
+    }
+
+
+
+}

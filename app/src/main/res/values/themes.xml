@@ -3,10 +3,18 @@
     <style name="Base.Theme.Joyers" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="fontFamily">@font/font_family</item>
+        <item name="fontFamily">@font/my_font_family</item>
+        <item name="android:fontFamily">@font/my_font_family</item>
         <item name="android:windowFullscreen">false</item>
-        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+        <item name="android:statusBarColor">#FFFFFF</item>
+        <!-- Dark icons in the status bar -->
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Optional background for app window -->
+        <item name="android:windowBackground">#FFFFFF</item>
 
     </style>
 

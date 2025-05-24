@@ -4,223 +4,300 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="25dp"
-            tools:context=".ui.signup.PageOneFragment">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/profile_picture"
-                android:textColor="@color/light_black"
-                android:textFontWeight="600"
-                android:textSize="18sp" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="270dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/light_grey_background">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/header_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.2"
-                    android:scaleType="centerCrop" />
-
-                <FrameLayout
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_centerInParent="true">
-
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/profile_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/white_circle"
-                        android:scaleType="centerCrop"
-                        app:shapeAppearanceOverlay="@style/CircleImageStyle" />
-
-                    <LinearLayout
-                        android:id="@+id/linear_profile_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:orientation="vertical">
-                        <!-- Circular ImageView inside CardView -->
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="71dp"
-                            android:layout_height="55dp"
-                            android:layout_gravity="center"
-                            android:scaleType="center"
-                            android:src="@drawable/camera_outline_colored" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:gravity="center"
-                            android:text="@string/upload_picture"
-                            android:textColor="@color/light_black"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
-
-
-                </FrameLayout>
-
-                <LinearLayout
-                    android:id="@+id/header_image_picker"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_gravity="end"
-                    android:layout_margin="15dp"
-                    android:orientation="vertical">
-
-                    <FrameLayout
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center">
-
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/white_circle" />
-
-                        <!-- Circular ImageView inside CardView -->
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:scaleType="center"
-                            android:src="@drawable/camera_inside_color" />
-
-
-                    </FrameLayout>
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:text="@string/header"
-                        android:textColor="@color/light_black"
-                        android:textSize="11sp" />
-                </LinearLayout>
-
-            </RelativeLayout>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/name"
-                android:textColor="@color/light_black"
-                android:textFontWeight="600"
-                android:textSize="18sp" />
-
-            <LinearLayout
-                android:id="@+id/linear_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/light_grey_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/username"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:gravity="center"
-                    android:hint="@string/joyer_name"
-                    android:lines="1"
-                    android:padding="17dp"
-                    android:textColor="@color/light_black"
-                    android:textFontWeight="400"
-                    android:textSize="16sp" />
-
-
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/joyer_location"
-                android:textColor="@color/light_black"
-                android:textFontWeight="600"
-                android:textSize="18sp" />
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/light_grey_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawableEnd="@drawable/drop_down"
-                    android:gravity="center"
-                    android:hint="@string/select_location"
-                    android:lines="1"
-                    android:paddingStart="35dp"
-                    android:paddingTop="14dp"
-                    android:paddingEnd="15dp"
-                    android:paddingBottom="14dp"
-                    android:textColor="@color/light_black"
-                    android:textFontWeight="400"
-                    android:textSize="16sp" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/circle_white_with_gold_border">
-
+                android:orientation="vertical"
+                android:padding="25dp"
+                tools:context=".ui.signup.PageOneFragment">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="@string/skip"
-                    android:textColor="@color/golden"
+                    android:text="@string/profile_picture"
+                    android:textColor="@color/light_black"
                     android:textFontWeight="600"
-                    android:textSize="16sp" />
+                    android:textSize="18sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/gery_light"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/header_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <FrameLayout
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_centerInParent="true">
+
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/profile_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/white_circle"
+                                android:scaleType="centerCrop"
+                                app:shapeAppearanceOverlay="@style/CircleImageStyle" />
+
+                            <LinearLayout
+                                android:id="@+id/linear_profile_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <!-- Circular ImageView inside CardView -->
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="71dp"
+                                    android:layout_height="55dp"
+                                    android:layout_gravity="center"
+                                    android:scaleType="center"
+                                    android:src="@drawable/camera_outline_colored" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="15dp"
+                                    android:gravity="center"
+                                    android:text="@string/upload_picture"
+                                    android:textColor="@color/light_black"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/close_image"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="end|bottom"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/circle_white_with_gold_border"
+                                android:padding="4dp"
+                                android:src="@drawable/cross_icon"
+                                android:visibility="gone" />
+
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/header_image_picker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center">
+
+
+                                <RelativeLayout
+                                    android:layout_width="37dp"
+                                    android:layout_height="37dp"
+                                    android:background="@drawable/white_circle">
+
+                                    <!-- Circular ImageView inside CardView -->
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:src="@drawable/camera_inside_color" />
+
+                                </RelativeLayout>
+
+                            </FrameLayout>
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="@string/header"
+                                android:textColor="@color/light_black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/header_close"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:layout_margin="15dp"
+                            android:background="@drawable/white_circle"
+                            android:padding="4dp"
+                            android:src="@drawable/cross_icon"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/name"
+                    android:textColor="@color/light_black"
+                    android:textFontWeight="600"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/linear_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/light_grey_background"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/username"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:hint="@string/joyer_name"
+                        android:lines="1"
+                        android:padding="17dp"
+                        android:textColor="@color/light_black"
+                        android:textFontWeight="400"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/text_length"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight=".05"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/forty_five"
+                        android:textColor="@color/light_black"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/joyer_location"
+                    android:textColor="@color/light_black"
+                    android:textFontWeight="600"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/light_grey_background"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/country_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawableEnd="@drawable/drop_down"
+                        android:gravity="center"
+                        android:hint="@string/select_location"
+                        android:lines="1"
+                        android:paddingStart="35dp"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="15dp"
+                        android:paddingBottom="14dp"
+                        android:textColor="@color/light_black"
+                        android:textFontWeight="400"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/skip"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/circle_white_with_gold_border">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/skip"
+                        android:textColor="@color/golden"
+                        android:textFontWeight="600"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/next"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/round_golden"
+                    android:visibility="gone">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:src="@drawable/outline_arrow_forward" />
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
 
-        </LinearLayout>
+        </ScrollView>
 
-    </ScrollView>
+        <include
+            android:id="@+id/progress_bar"
+            layout="@layout/layout_progress_bar" />
+
+    </FrameLayout>
 </layout>

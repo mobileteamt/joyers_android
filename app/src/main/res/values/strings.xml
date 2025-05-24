@@ -49,9 +49,11 @@
     <string name="profile_picture">Profile Picture</string>
     <string name="upload_picture">Upload Picture</string>
     <string name="header">Header</string>
-    <string name="name">Name*</string>
+    <string name="name">Name *</string>
+    <string name="name_only">Name</string>
     <string name="joyer_name">Joyer Name</string>
-    <string name="joyer_location">Joyer Location*</string>
+    <string name="joyer_location">Joyer Location *</string>
+    <string name="joyer_location_only">Joyer Location</string>
     <string name="select_location">Select Location</string>
     <string name="skip">Skip</string>
     <string name="joyer_status">Joyer Status</string>
@@ -104,6 +106,23 @@ I Will Make This <font color="#D69E3A"><b>PLANET</b></font> a Better Place,<br/>
     <string name="pick_multiple_images">Pick Multiple Images</string>
     <string name="pick_image">Pick Image</string>
 
+    <string name="search">Search</string>
+    <string name="search_speciality">Search Title</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="invaild_email">The email entered is invalid. Please try again.</string>
+    <string name="invaild_phone">The mobile number entered is invalid. Please try again.</string>
+    <string name="username_is_already_taken">This username is already taken. Please try another.</string>
+    <string name="forty_five">45</string>
+    <string name="apply">Apply</string>
+    <string name="code_sent_to_email">Enter the code sent to your email.</string>
+    <string name="code_sent_to_phone">Enter the code sent to your phone number.</string>
+
+    <string name="ghost_description">
+    <![CDATA[
+    <font color="#FFD700">Ghost</font> : Ghost Joyer’s (Following &amp; Followers) are not seen by anyone, except the account owner.
+    ]]>
+</string>
 </resources>
 
 

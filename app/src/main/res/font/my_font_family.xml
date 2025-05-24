@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Light (300) -->
+    <font
+        android:font="@font/lato_light"
+        android:fontWeight="@integer/light"
+        android:fontStyle="normal" />
+
+    <!-- Regular (400) -->
+    <font
+        android:font="@font/lato_regular"
+        android:fontWeight="@integer/normal"
+        android:fontStyle="normal" />
+
+    <!-- SemiBold (600) -->
+    <font
+        android:font="@font/lato_semi_bold"
+        android:fontWeight="@integer/semiBold"
+        android:fontStyle="normal" />
+
+    <!-- Bold (700) -->
+    <font
+        android:font="@font/lato_bold"
+        android:fontWeight="@integer/bold"
+        android:fontStyle="normal" />
+
+
+    <!-- Italic (400 Italic) -->
+    <font
+        android:font="@font/lato_italic"
+        android:fontWeight="@integer/normal"
+        android:fontStyle="italic" />
+
+</font-family>

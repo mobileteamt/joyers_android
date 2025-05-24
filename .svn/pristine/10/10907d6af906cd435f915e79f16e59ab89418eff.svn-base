@@ -1,0 +1,16 @@
+package com.synapse.joyers.apiData
+
+import com.synapse.joyers.apiData.request.ForgotPasswordRequest
+import com.synapse.joyers.apiData.request.LoginRequest
+import com.synapse.joyers.apiData.request.VerifyResetCodeRequest
+
+
+class RemoteDataSource(private val apiService: ApiService) {
+
+      suspend fun login(request: LoginRequest) = apiService.login(request)
+
+      suspend fun forgotPassword(request: ForgotPasswordRequest) = apiService.forgotPassword(request)
+
+      suspend fun verifyResetCode(request: VerifyResetCodeRequest) = apiService.verifyResetCode(request)
+
+}

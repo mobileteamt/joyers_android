@@ -12,23 +12,35 @@ val Context.dataStore by preferencesDataStore(name = "user_prefs")
 
 class PreferencesManager(private val context: Context) {
 
-    private val KEY_USERNAME = stringPreferencesKey("key_username")
+    private val ACCESS_TOKEN = stringPreferencesKey("access_token")
+    private val USER_ID = stringPreferencesKey("user_id")
 
-    val usernameFlow: Flow<String?> = context.dataStore.data.map { prefs ->
-        prefs[KEY_USERNAME]
-    }
 
-    suspend fun saveUsername(username: String) {
+    suspend fun saveAccessToken(accessToken: String) {
         context.dataStore.updateData { prefs ->
             prefs.toMutablePreferences().apply {
-                set(KEY_USERNAME, username)
+                set(ACCESS_TOKEN, accessToken)
             }
         }
     }
 
-    suspend fun getUsername(): String? {
-        return context.dataStore.data.first()[KEY_USERNAME]
+    suspend fun getAccessToken(): String? {
+        return context.dataStore.data.first()[ACCESS_TOKEN]
     }
+
+    suspend fun getUserId(): String? {
+        return context.dataStore.data.first()[USER_ID]
+    }
+
+    suspend fun saveUserId(userId: String) {
+        context.dataStore.updateData { prefs ->
+            prefs.toMutablePreferences().apply {
+                set(USER_ID, userId)
+            }
+        }
+    }
+
+
 
     suspend fun clear() {
         context.dataStore.updateData { prefs ->

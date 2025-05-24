@@ -8,8 +8,18 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
+import androidx.lifecycle.lifecycleScope
 import com.synapse.joyers.R
+import com.synapse.joyers.apiData.ApiResultHandler
+import com.synapse.joyers.apiData.request.UpdateUserRequest
+import com.synapse.joyers.apiData.response.BaseResponse
+import com.synapse.joyers.apiData.response.UploadResponse
 import com.synapse.joyers.databinding.FragmentPageTwoBinding
+import com.synapse.joyers.localstore.PreferencesManager
+import com.synapse.joyers.ui.signup.PageOneFragment.SelectedImageType
+import com.synapse.joyers.utils.showProgress
+import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 
 
 class PageTwoFragment : Fragment() {
@@ -17,7 +27,8 @@ class PageTwoFragment : Fragment() {
 
     private lateinit var binding: FragmentPageTwoBinding
     private var selectedTextView: AppCompatTextView? = null
-
+    private val signupViewModel: SignupViewModel by inject()
+    private val preferencesManager: PreferencesManager by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +40,7 @@ class PageTwoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        observeApiPostData()
 
         setTextViewClickListener(binding.classic)
         setTextViewClickListener(binding.leader)
@@ -51,6 +63,20 @@ class PageTwoFragment : Fragment() {
             HtmlCompat.FROM_HTML_MODE_LEGACY
         )
 
+        binding.next.setOnClickListener {
+            lifecycleScope.launch {
+                val token = preferencesManager.getAccessToken()
+                val userID = preferencesManager.getUserId()
+                if (token != null && userID != null) {
+                    signupViewModel.updateUser(
+                        token, userID, UpdateUserRequest(
+                            joyerStatus = "Classic", is_status_verified = true
+                        )
+                    )
+
+                }
+            }
+        }
     }
 
     // Method to set click listener and handle selection/deselection
@@ -76,6 +102,12 @@ class PageTwoFragment : Fragment() {
         )
         // Mark it as selected
         selectedTextView = textView
+
+        if (selectedTextView == binding.classic) {
+            binding.next.visibility= View.VISIBLE
+        }else{
+            binding.next.visibility= View.GONE
+        }
     }
 
     // Method to reset the state of a TextView
@@ -91,7 +123,25 @@ class PageTwoFragment : Fragment() {
                 R.color.black
             )
         )
+
+        binding.next.visibility= View.GONE
     }
 
 
+    private fun observeApiPostData() {
+        signupViewModel.userInfoResponse.observe(requireActivity()) { response ->
+            val apiResultHandler = ApiResultHandler<BaseResponse>(
+                requireActivity(),
+                onLoading = { showProgress(binding.progressBar.circularProgress, true) },
+                onSuccess = {
+                    showProgress(binding.progressBar.circularProgress, false)
+                    (requireActivity() as IdentityActivity).goToNextPage()
+                },
+                onFailure = {
+                    showProgress(binding.progressBar.circularProgress, false)
+                }
+            )
+            apiResultHandler.handleApiResult(response)
+        }
+    }
 }

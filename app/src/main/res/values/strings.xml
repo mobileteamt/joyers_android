@@ -123,6 +123,10 @@ I Will Make This <font color="#D69E3A"><b>PLANET</b></font> a Better Place,<br/>
     <font color="#FFD700">Ghost</font> : Ghost Joyer’s (Following &amp; Followers) are not seen by anyone, except the account owner.
     ]]>
 </string>
+    <string name="post_dummy_content"><![CDATA[Hi there! I’m using the best platform in this Globe, it’s Joyers Network! t’s an Amazing Social Platform which represent EVERY single aspect in my life! I’ve suggested it for many of my Friends who likes to create their Business, enjoy Hobbies & ntertaints! Guys, Let’s Joy with the Joyers Network!...]]></string>
+    <string name="joy_line">Joy Line</string>
+    <string name="place_to_visit_usa">Place To Visit_USA</string>
+    <string name="media_library">Media Library</string>
 </resources>
 
 

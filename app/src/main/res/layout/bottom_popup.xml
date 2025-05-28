@@ -3,7 +3,7 @@
     android:id="@+id/layout_bottom_sheet"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_popup_rounded_top"
+    android:background="@drawable/ic_round_layout"
     android:orientation="vertical"
     android:padding="20dp">
 

@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gray circular background -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#BDBDBD" /> <!-- Gray color -->
+            <size android:width="48dp"
+                android:height="48dp" /> <!-- Adjust size -->
+        </shape>
+    </item>
+
+    <!-- Centered icon -->
+    <item android:gravity="center">
+        <bitmap
+            android:src="@drawable/ic_layout"
+            android:gravity="center" />
+    </item>
+</layer-list>

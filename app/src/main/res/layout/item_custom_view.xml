@@ -1,0 +1,48 @@
+<LinearLayout android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:gravity="center"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="20dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"> <!-- This centers child both vertically and horizontally -->
+
+    <FrameLayout
+        android:layout_width="29dp"
+        android:layout_height="29dp">
+
+        <!-- Dashed circle background -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dashed_circle" />
+
+        <!-- Centered logo -->
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center"
+            android:contentDescription="Play"
+            android:src="@drawable/icon_awesome_play" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/storyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="999"
+        style="@style/latoBoldFontStyle"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:background="@drawable/rounded_background" />
+
+
+
+</LinearLayout>

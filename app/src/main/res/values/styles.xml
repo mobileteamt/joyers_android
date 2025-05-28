@@ -10,8 +10,19 @@
         <item name="android:textSize">20sp</item>
         <item name="textAllCaps">false</item>
         <item name="android:textFontWeight">@integer/semiBold</item>
-
     </style>
+
+    <style name="TextSemiBold" parent="Widget.AppCompat.TextView">
+        <item name="textAllCaps">false</item>
+       <item name="fontFamily">@font/lato_semi_bold</item>
+    </style>
+
+
+    <style name="TextBold" parent="Widget.AppCompat.TextView">
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/lato_bold</item>
+    </style>
+
 
     <style name="Widget.Theme.Joyers.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
         <item name="android:background">@color/black_overlay</item>
@@ -26,5 +37,7 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+
 
 </resources>

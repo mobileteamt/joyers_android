@@ -15,4 +15,13 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
     <color name="off_white">#3333330D</color>
+
+
+<!--    border colors-->
+    <color name="border1">#2E79F0</color>
+    <color name="border2">#0ED916</color>
+    <color name="border3">#D69E3A</color>
+    <color name="border4">#A951D6</color>
+
+
 </resources>

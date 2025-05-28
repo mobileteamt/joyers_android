@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="15dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="13dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <com.synapse.joyers.componants.SegmentedCircleView
+            android:id="@+id/segmentedCircle"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/storyImage"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:padding="2dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_story" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txtMyStory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textColor="#333333"
+        style="@style/latoSemiBoldFontStyle"
+        android:textSize="12sp"
+        android:text="My Story"
+      />
+</LinearLayout>

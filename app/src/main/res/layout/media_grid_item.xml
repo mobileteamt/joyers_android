@@ -1,0 +1,43 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:layout_gravity="fill"
+    android:layout_rowWeight="1"
+    android:layout_columnWeight="1">
+
+    <ImageView
+        android:id="@+id/mediaImage"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sample_image_1" />
+
+    <ImageView
+        android:id="@+id/closeIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="6dp"
+        android:src="@drawable/ic_close"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/playIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_play_circle"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/moreOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#88000000"
+        android:text="+5"
+        android:textColor="#FFF"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:visibility="gone"/>
+</FrameLayout>

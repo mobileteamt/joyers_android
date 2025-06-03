@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:background="@drawable/border_outer"
+    android:divider="@drawable/divider_vertical"
+    android:dividerPadding="0dp"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:showDividers="middle">
+
+    <!-- First row: 2 panels -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:divider="@drawable/divider_vertical"
+        android:dividerPadding="0dp"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+    <!-- Horizontal divider between rows -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000" />
+
+    <!-- Second row: 3 panels -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:divider="@drawable/divider_vertical"
+        android:dividerPadding="0dp"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+</LinearLayout>

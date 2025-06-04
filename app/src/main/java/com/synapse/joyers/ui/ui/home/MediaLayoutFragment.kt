@@ -338,8 +338,8 @@ class MediaLayoutFragment : Fragment() {
                 firstRowWeight = 0.6f  // first row taller
                 secondRowWeight = 0.4f
             } else {
-                firstRowWeight = 0.4f  // second row taller
-                secondRowWeight = 0.6f
+                firstRowWeight = 0.5f  // second row taller
+                secondRowWeight = 0.5f
             }
 
             // Create first row (2 items)

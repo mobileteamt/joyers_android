@@ -56,5 +56,25 @@
     </style>
 
 
+    <style name="SelectableButton">
+        <item name="android:background">@drawable/btn_unselected_background</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="SelectableButtonSelected">
+        <item name="android:background">@drawable/btn_selected_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
 
 </resources>

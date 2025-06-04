@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutThree"
+    android:layout_width="wrap_content"
+    android:gravity="center"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <TextView
+        style="@style/latoSemiBoldFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="17dp"
+        android:text="View 3"
+        android:textSize="16sp" />
+
+
+    <ImageView
+        android:id="@+id/imgLayoutThree"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_view_three"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        android:background="@drawable/border_outer"
+        android:divider="@drawable/divider_vertical"
+        android:dividerPadding="0dp"
+        android:orientation="vertical"
+        android:padding="0dp"
+        android:showDividers="middle">
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

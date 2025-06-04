@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layoutOne"
+    android:id="@+id/layoutTwo"
     android:layout_width="wrap_content"
     android:gravity="center"
     android:layout_height="wrap_content"
@@ -9,24 +8,23 @@
     android:showDividers="middle">
 
     <TextView
-        android:id="@+id/tvView1"
         style="@style/latoSemiBoldFontStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginBottom="17dp"
-        android:text="View 1"
+        android:text="View 2"
         android:textSize="16sp" />
 
+
     <ImageView
-        android:id="@+id/imgLayoutOne"
+        android:id="@+id/imgLayoutTwo"
         android:layout_width="wrap_content"
-        android:src="@drawable/ic_view_one"
-        android:layout_height="wrap_content" />
+        android:src="@drawable/ic_view_two"
+        android:layout_height="wrap_content"/>
 
 
     <LinearLayout
-        android:id="@+id/llBorder"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:visibility="gone"
@@ -36,26 +34,22 @@
         android:orientation="vertical"
         android:padding="0dp"
         android:showDividers="middle">
-
         <!-- First row: 2 panels -->
         <LinearLayout
-            android:id="@+id/llFirstRow"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:divider="@drawable/divider_vertical"
             android:dividerPadding="0dp"
             android:orientation="horizontal"
             android:showDividers="middle">
 
             <View
-                android:id="@+id/viewFirstRowPanel1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent" />
 
             <View
-                android:id="@+id/viewFirstRowPanel2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -65,14 +59,12 @@
 
         <!-- Horizontal divider between rows -->
         <View
-            android:id="@+id/viewHorizontalDivider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#000000" />
 
         <!-- Second row: 3 panels -->
         <LinearLayout
-            android:id="@+id/llSecondRow"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:divider="@drawable/divider_vertical"
@@ -81,21 +73,18 @@
             android:showDividers="middle">
 
             <View
-                android:id="@+id/viewSecondRowPanel1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent" />
 
             <View
-                android:id="@+id/viewSecondRowPanel2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent" />
 
             <View
-                android:id="@+id/viewSecondRowPanel3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

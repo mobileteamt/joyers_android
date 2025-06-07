@@ -100,12 +100,10 @@ class HomeFragment : Fragment() {
 
         btnOpenFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.container, MediaLayoutFragment())
+                .replace(R.id.container, MediaLayoutTwoFragment())
                 .addToBackStack(null)
                 .commit()
         }
-
-
 
         return view
     }

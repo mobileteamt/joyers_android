@@ -1,13 +1,16 @@
+
+
 package com.synapse.joyers.ui.ui.home
 
 import android.animation.ValueAnimator
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.Bundle
+import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -19,12 +22,23 @@ import com.synapse.joyers.R
 class MediaLayoutFragment : Fragment() {
 
     private lateinit var rootView: View
-    private var currentLayout = "layoutOne"
+    private var currentLayout = "fiveLayoutOne"
     private var lastTintedLayout: ViewGroup? = null
-    private lateinit var imgLayoutOne: ImageView
-    private lateinit var imgLayoutTwo: ImageView
-    private lateinit var imgLayoutThree: ImageView
+    private lateinit var imgFiveLayoutOne: ImageView
+    private lateinit var imgFiveLayoutTwo: ImageView
+    private lateinit var imgFiveLayoutThree: ImageView
     private var selectedTabValue: Int = 100
+    val mediaItems = listOf(
+        R.drawable.sample_image,
+        R.drawable.sample_image
+    )
+
+
+    private lateinit var layoutTwo: LinearLayout
+    private lateinit var layoutThree: LinearLayout
+    private lateinit var layoutFour: LinearLayout
+    private lateinit var layoutFive: LinearLayout
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,17 +46,19 @@ class MediaLayoutFragment : Fragment() {
     ): View {
         rootView = inflater.inflate(R.layout.fragment_media_layout, container, false)
 
+        setupLayoutImage()
+
         with(rootView) {
-            imgLayoutOne = findViewById(R.id.imgLayoutOne)
-            imgLayoutTwo = findViewById(R.id.imgLayoutTwo)
-            imgLayoutThree = findViewById(R.id.imgLayoutThree)
+            imgFiveLayoutOne = findViewById(R.id.imgFiveLayoutOne)
+            imgFiveLayoutTwo = findViewById(R.id.imgFiveLayoutTwo)
+            imgFiveLayoutThree = findViewById(R.id.imgFiveLayoutThree)
 
             setupTabs(findViewById(R.id.tab_container))
 
             val layouts = mapOf(
-                "layoutOne" to findViewById<LinearLayout>(R.id.layoutOne),
-                "layoutTwo" to findViewById<LinearLayout>(R.id.layoutTwo),
-                "layoutThree" to findViewById<LinearLayout>(R.id.layoutThree)
+                "fiveLayoutOne" to findViewById<LinearLayout>(R.id.fiveLayoutOne),
+                "fiveLayoutTwo" to findViewById<LinearLayout>(R.id.fiveLayoutTwo),
+                "fiveLayoutThree" to findViewById<LinearLayout>(R.id.fiveLayoutThree)
             )
 
             layouts.forEach { (layoutName, layoutView) ->
@@ -54,10 +70,35 @@ class MediaLayoutFragment : Fragment() {
             }
 
             // Initial selection
-            switchLayout("layoutOne", layouts["layoutOne"]!!)
+            switchLayout("fiveLayoutOne", layouts["fiveLayoutOne"]!!)
         }
 
         return rootView
+    }
+
+    private fun setupLayoutImage() {
+        val value = mediaItems.size
+
+        with(rootView) {
+            layoutTwo = findViewById(R.id.twoUploads)
+            layoutThree = findViewById(R.id.threeUploads)
+            layoutFour = findViewById(R.id.fourUploads)
+            layoutFive = findViewById(R.id.fiveUploads)
+        }
+
+        // Hide all predefined layouts initially
+        val allLayouts = listOf(layoutTwo, layoutThree, layoutFour, layoutFive)
+        allLayouts.forEach { it.visibility = View.GONE }
+
+        val layouts = listOf(
+            2 to layoutTwo,
+            3 to layoutThree,
+            4 to layoutFour,
+            5 to layoutFive
+        )
+        layouts.forEach { (v, layout) ->
+            layout.visibility = if (v == value) View.VISIBLE else View.GONE
+        }
     }
 
     private fun setupTabs(tabContainer: LinearLayout) {
@@ -81,13 +122,14 @@ class MediaLayoutFragment : Fragment() {
 
             tabView.layoutParams = layoutParams
 
-            // Default select 350
-            if (label == "350") {
+            // Default select 100
+            if (label == "100") {
                 tabView.setBackgroundResource(R.drawable.tab_selected)
                 tabView.setTextColor(Color.WHITE)
                 selectedTab = tabView
                 selectedTabValue = label.toInt()
             }
+
 
             tabView.setOnClickListener {
                 selectedTab?.apply {
@@ -124,14 +166,14 @@ class MediaLayoutFragment : Fragment() {
 
     private fun updateLayoutIcons(selected: String) {
         val icons = mapOf(
-            "layoutOne" to Pair(imgLayoutOne, R.drawable.ic_view_one_selected),
-            "layoutTwo" to Pair(imgLayoutTwo, R.drawable.ic_view_two_selected),
-            "layoutThree" to Pair(imgLayoutThree, R.drawable.ic_view_three_selected)
+            "fiveLayoutOne" to Pair(imgFiveLayoutOne, R.drawable.ic_view_one_selected),
+            "fiveLayoutTwo" to Pair(imgFiveLayoutTwo, R.drawable.ic_view_two_selected),
+            "fiveLayoutThree" to Pair(imgFiveLayoutThree, R.drawable.ic_view_three_selected)
         )
 
-        imgLayoutOne.setImageResource(R.drawable.ic_view_one)
-        imgLayoutTwo.setImageResource(R.drawable.ic_view_two)
-        imgLayoutThree.setImageResource(R.drawable.ic_view_three)
+        imgFiveLayoutOne.setImageResource(R.drawable.ic_view_one)
+        imgFiveLayoutTwo.setImageResource(R.drawable.ic_view_two)
+        imgFiveLayoutThree.setImageResource(R.drawable.ic_view_three)
 
         icons[selected]?.first?.setImageResource(icons[selected]!!.second)
     }
@@ -163,145 +205,6 @@ class MediaLayoutFragment : Fragment() {
         }
     }
 
-//    private fun loadMediaGrid(layoutType: String) {
-//        val mediaGrid = rootView.findViewById<GridLayout>(R.id.media_grid)
-//        val mediaViewPager = rootView.findViewById<ViewPager2>(R.id.media_view_pager)
-//
-//        mediaGrid.removeAllViews()
-//        mediaViewPager.adapter = null
-//
-//        mediaGrid.visibility = View.GONE
-//        mediaViewPager.visibility = View.GONE
-//
-//        val density = resources.displayMetrics.density
-//        val selectedHeightPx = (selectedTabValue * density).toInt()
-//
-//        val mediaItems = listOf(
-//            R.drawable.sample_image,
-//            R.drawable.sample_two,
-//            R.drawable.sample_image,
-//            R.drawable.sample_two,
-//            R.drawable.sample_image,
-//            R.drawable.sample_two
-//        )
-//
-//        if (layoutType == "layoutOne" || layoutType == "layoutTwo") {
-//            mediaGrid.visibility = View.VISIBLE
-//            mediaGrid.layoutParams.height = selectedHeightPx
-//            mediaGrid.requestLayout()
-//
-//            mediaGrid.columnCount = 6
-//
-//            val (topRowHeight, bottomRowHeight) = if (layoutType == "layoutOne") {
-//                Pair(selectedHeightPx / 2, selectedHeightPx / 2)
-//            } else {
-//                Pair((selectedHeightPx * 0.6).toInt(), (selectedHeightPx * 0.4).toInt())
-//            }
-//
-//            mediaItems.take(5).forEachIndexed { index, itemRes ->
-//                val itemView = layoutInflater.inflate(R.layout.media_grid_item, mediaGrid, false)
-//
-//                val img = itemView.findViewById<ImageView>(R.id.mediaImage)
-//                val close = itemView.findViewById<ImageView>(R.id.closeIcon)
-//                val play = itemView.findViewById<ImageView>(R.id.playIcon)
-//                val moreOverlay = itemView.findViewById<TextView>(R.id.moreOverlay)
-//                val count = itemView.findViewById<TextView>(R.id.imageCounter)
-//
-//                img.setImageResource(itemRes)
-//                img.scaleType = ImageView.ScaleType.CENTER_CROP
-//                img.layoutParams.height = if (index < 2) topRowHeight else bottomRowHeight
-//
-//                count.visibility = View.GONE
-//
-//                // Handle play icon
-//                if (index == 2) {
-//                    play.visibility = View.VISIBLE
-//                    val playSizeDp =
-//                        if (selectedTabValue == 100 || selectedTabValue == 200) 30 else 36
-//                    val playMarginDp =
-//                        if (selectedTabValue == 100 || selectedTabValue == 200) 8 else 10
-//                    val playSizePx = (playSizeDp * density).toInt()
-//                    val playMarginPx = (playMarginDp * density).toInt()
-//                    val playParams = play.layoutParams as ViewGroup.MarginLayoutParams
-//                    playParams.setMargins(playMarginPx, playMarginPx, playMarginPx, playMarginPx)
-//                    playParams.width = playSizePx
-//                    playParams.height = playSizePx
-//                    play.layoutParams = playParams
-//                } else {
-//                    play.visibility = View.GONE
-//                }
-//
-//                // Handle more overlay
-//                if (index == 4 && mediaItems.size > 5) {
-//                    moreOverlay.visibility = View.VISIBLE
-//                    moreOverlay.text = "+${mediaItems.size - 5}"
-//                } else {
-//                    moreOverlay.visibility = View.GONE
-//                }
-//
-//                close.visibility = View.VISIBLE
-//                val closeMarginDp =
-//                    if (selectedTabValue == 100 || selectedTabValue == 200) 10 else 15
-//                val closeSizeDp = if (selectedTabValue == 100 || selectedTabValue == 200) 22 else 25
-//                val closeMarginPx = (closeMarginDp * density).toInt()
-//                val closeSizePx = (closeSizeDp * density).toInt()
-//                val closeParams = close.layoutParams as ViewGroup.MarginLayoutParams
-//                closeParams.setMargins(closeMarginPx, closeMarginPx, closeMarginPx, closeMarginPx)
-//                closeParams.width = closeSizePx
-//                closeParams.height = closeSizePx
-//                close.layoutParams = closeParams
-//
-//                // Optional: set margin for count if needed (hidden here)
-//                val countParams = count.layoutParams as ViewGroup.MarginLayoutParams
-//                countParams.setMargins(closeMarginPx, closeMarginPx, closeMarginPx, closeMarginPx)
-//                count.layoutParams = countParams
-//
-//                val params = GridLayout.LayoutParams().apply {
-//                    width = 0
-//                    height = ViewGroup.LayoutParams.WRAP_CONTENT
-//                    when (index) {
-//                        0 -> {
-//                            columnSpec = GridLayout.spec(0, 3, 1f)
-//                            rowSpec = GridLayout.spec(0)
-//                        }
-//
-//                        1 -> {
-//                            columnSpec = GridLayout.spec(3, 3, 1f)
-//                            rowSpec = GridLayout.spec(0)
-//                        }
-//
-//                        2 -> {
-//                            columnSpec = GridLayout.spec(0, 2, 1f)
-//                            rowSpec = GridLayout.spec(1)
-//                        }
-//
-//                        3 -> {
-//                            columnSpec = GridLayout.spec(2, 2, 1f)
-//                            rowSpec = GridLayout.spec(1)
-//                        }
-//
-//                        4 -> {
-//                            columnSpec = GridLayout.spec(4, 2, 1f)
-//                            rowSpec = GridLayout.spec(1)
-//                        }
-//                    }
-//                }
-//
-//                itemView.layoutParams = params
-//                mediaGrid.addView(itemView)
-//            }
-//
-//        } else if (layoutType == "layoutThree") {
-//            mediaViewPager.visibility = View.VISIBLE
-//            mediaViewPager.layoutParams.height = selectedHeightPx
-//            mediaViewPager.requestLayout()
-//
-//            mediaViewPager.adapter = MediaPagerAdapter(mediaItems, selectedTabValue, density)
-//            mediaViewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-//        }
-//    }
-
-
     private fun loadMediaGrid(layoutType: String) {
         val mediaContainer = rootView.findViewById<LinearLayout>(R.id.media_container)
         val mediaViewPager = rootView.findViewById<ViewPager2>(R.id.media_view_pager)
@@ -314,35 +217,90 @@ class MediaLayoutFragment : Fragment() {
 
         val density = resources.displayMetrics.density
         val selectedHeightPx = (selectedTabValue * density).toInt()
+        Log.e("TAG", "loadMediaGrid: $selectedTabValue")
 
-        val mediaItems = listOf(
-            R.drawable.sample_image,
-            R.drawable.sample_two,
-            R.drawable.sample_image,
-            R.drawable.sample_two,
-            R.drawable.sample_image,
-            R.drawable.sample_two
-        )
+        // Case: selectedTabValue == 100
+        if (selectedTabValue == 100) {
+            mediaContainer.visibility = View.VISIBLE
+            mediaContainer.orientation = LinearLayout.HORIZONTAL
+            mediaContainer.layoutParams.height = selectedHeightPx
+            mediaContainer.requestLayout()
 
-        if (layoutType == "layoutOne" || layoutType == "layoutTwo") {
+            val maxVisibleItems = 3
+            val totalItems = mediaItems.size
+            val displayCount = if (totalItems > maxVisibleItems) maxVisibleItems else totalItems
+
+            for (i in 0 until displayCount) {
+                val itemView = layoutInflater.inflate(R.layout.media_grid_item, mediaContainer, false)
+
+                itemView.layoutParams = if (displayCount == 1) {
+                    LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT
+                    )
+                } else {
+                    LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
+                }
+
+                setupItemView(itemView, mediaItems[i], density, selectedHeightPx)
+
+                val overlay = itemView.findViewById<TextView>(R.id.moreOverlay)
+                if (i == 2 && totalItems > maxVisibleItems) {
+                    overlay.visibility = View.VISIBLE
+                    overlay.text = "+${totalItems - maxVisibleItems}"
+                    overlay.setBackgroundColor(Color.parseColor("#80000000"))
+                    overlay.setTextColor(Color.WHITE)
+                    overlay.textSize = 20f
+                    overlay.gravity = Gravity.CENTER
+                } else {
+                    overlay.visibility = View.GONE
+                }
+
+                mediaContainer.addView(itemView)
+            }
+            return
+        }
+
+        // Case: selectedTabValue != 100 AND only 1 image
+        if (mediaItems.size == 1) {
+            mediaContainer.visibility = View.VISIBLE
+            mediaContainer.orientation = LinearLayout.HORIZONTAL
+            mediaContainer.layoutParams.height = selectedHeightPx
+            mediaContainer.requestLayout()
+
+            val itemView = layoutInflater.inflate(R.layout.media_grid_item, mediaContainer, false)
+            itemView.layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT
+            )
+
+            setupItemView(itemView, mediaItems[0], density, selectedHeightPx)
+
+            val overlay = itemView.findViewById<TextView>(R.id.moreOverlay)
+            overlay.visibility = View.GONE
+
+            mediaContainer.addView(itemView)
+            return
+        }
+
+        // Remaining logic for multiple items
+        if (layoutType == "fiveLayoutOne" || layoutType == "fiveLayoutTwo") {
             mediaContainer.visibility = View.VISIBLE
             mediaContainer.layoutParams.height = selectedHeightPx
             mediaContainer.requestLayout()
             mediaContainer.orientation = LinearLayout.VERTICAL
 
-            // Define weights for row heights based on layout type
             val firstRowWeight: Float
             val secondRowWeight: Float
 
-            if (layoutType == "layoutTwo") {
-                firstRowWeight = 0.6f  // first row taller
+            if (layoutType == "fiveLayoutTwo") {
+                firstRowWeight = 0.6f
                 secondRowWeight = 0.4f
             } else {
-                firstRowWeight = 0.5f  // second row taller
+                firstRowWeight = 0.5f
                 secondRowWeight = 0.5f
             }
 
-            // Create first row (2 items)
             val firstRow = LinearLayout(context).apply {
                 orientation = LinearLayout.HORIZONTAL
                 layoutParams = LinearLayout.LayoutParams(
@@ -353,7 +311,6 @@ class MediaLayoutFragment : Fragment() {
                 weightSum = 2f
             }
 
-            // Create second row (3 items)
             val secondRow = LinearLayout(context).apply {
                 orientation = LinearLayout.HORIZONTAL
                 layoutParams = LinearLayout.LayoutParams(
@@ -366,8 +323,8 @@ class MediaLayoutFragment : Fragment() {
 
             val marginPx = (4 * density).toInt()
 
-            // Add first two items to first row
-            for (i in 0..1) {
+            val firstRowItemCount = minOf(2, mediaItems.size)
+            for (i in 0 until firstRowItemCount) {
                 val itemView = layoutInflater.inflate(R.layout.media_grid_item, firstRow, false)
                 val itemHeightPx = (selectedHeightPx * firstRowWeight).toInt()
                 setupItemView(itemView, mediaItems[i], density, itemHeightPx)
@@ -389,15 +346,11 @@ class MediaLayoutFragment : Fragment() {
                 }
 
                 val params = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
-                // Removed margin setting here, so no margins at all
-                // if (i < 1) params.setMargins(0, 0, marginPx, 0)
                 itemView.layoutParams = params
-
                 firstRow.addView(itemView)
             }
 
-// Add next three items to second row
-            for (i in 2..4) {
+            for (i in 2 until mediaItems.size.coerceAtMost(5)) {
                 val itemView = layoutInflater.inflate(R.layout.media_grid_item, secondRow, false)
                 val itemHeightPx = (selectedHeightPx * secondRowWeight).toInt()
                 setupItemView(itemView, mediaItems[i], density, itemHeightPx)
@@ -419,23 +372,14 @@ class MediaLayoutFragment : Fragment() {
                 }
 
                 val params = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
-                // Removed margin setting here too
-                // if (i < 4) params.setMargins(0, 0, marginPx, 0)
                 itemView.layoutParams = params
-
                 secondRow.addView(itemView)
             }
 
-
-
             mediaContainer.addView(firstRow)
             mediaContainer.addView(secondRow)
-            // Animate row weight change on layout switch
-            // This only makes sense if you keep track of previous layout weights
-            // For demo: animate from equal (0.5,0.5) to desired weights
 
             val animDuration = 300L
-
             val animator = ValueAnimator.ofFloat(0.5f, firstRowWeight)
             animator.duration = animDuration
             animator.addUpdateListener { animation ->
@@ -449,8 +393,7 @@ class MediaLayoutFragment : Fragment() {
                 secondRow.layoutParams = secondParams
             }
             animator.start()
-
-        } else if (layoutType == "layoutThree") {
+        } else if (layoutType == "fiveLayoutThree") {
             mediaViewPager.visibility = View.VISIBLE
             mediaViewPager.layoutParams.height = selectedHeightPx
             mediaViewPager.requestLayout()
@@ -459,6 +402,7 @@ class MediaLayoutFragment : Fragment() {
             mediaViewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         }
     }
+
 
 
 // Keep your existing setupItemView but enhanced for icon sizes & margins:

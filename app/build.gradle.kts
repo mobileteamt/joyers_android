@@ -95,7 +95,8 @@ dependencies {
     implementation(libs.sdp)
     implementation(libs.ssp)
 
-
+    implementation(libs.glide)
+    kapt(libs.glide.compiler)
 
 
 }

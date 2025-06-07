@@ -129,6 +129,9 @@ I Will Make This <font color="#D69E3A"><b>PLANET</b></font> a Better Place,<br/>
     <string name="media_library">Media Library</string>
     <string name="media_height">Media Height :</string>
     <string name="layout">Layout :</string>
+    <string name="view_1">View 1</string>
+    <string name="view_2">View 2</string>
+    <string name="view_3">View 3</string>
 
 
 </resources>

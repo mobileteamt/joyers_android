@@ -1,6 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#FAFAFA"
     android:fillViewport="true">
 
@@ -70,18 +71,18 @@
                 android:id="@+id/tab_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp" />
+                android:orientation="horizontal" />
         </HorizontalScrollView>
 
         <LinearLayout
+            android:id="@+id/layoutView"
+            android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:orientation="vertical"
-            android:layout_marginTop="25dp">
+            android:layout_marginStart="15dp">
 
             <TextView
+                android:id="@+id/layoutText"
                 style="@style/latoBoldFontStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,10 +91,9 @@
                 android:text="@string/layout"
                 android:textSize="16sp" />
 
-
-
             <LinearLayout
                 android:id="@+id/twoUploads"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -101,8 +101,7 @@
                     android:layout_width="wrap_content"
                     android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -114,9 +113,9 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/twoLayoutOne"
+                        android:id="@+id/ivTwoByTwoOne"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ic_view_one"
+                        android:src="@drawable/ic_two_by_two_v"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -127,8 +126,7 @@
                     android:gravity="center"
                     android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -140,9 +138,9 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/twoLayoutTwo"
+                        android:id="@+id/ivTwoByTwoTwo"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ic_view_two"
+                        android:src="@drawable/ic_two_by_two_h"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -151,10 +149,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -166,7 +162,7 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/twoLayoutThree"
+                        android:id="@+id/ivTwoByTwoThree"
                         android:layout_width="wrap_content"
                         android:src="@drawable/ic_view_three"
                         android:layout_height="wrap_content" />
@@ -185,8 +181,7 @@
                     android:layout_width="wrap_content"
                     android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -198,9 +193,9 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/threeLayoutOne"
+                        android:id="@+id/ivThreeByThreeOne"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ic_view_one"
+                        android:src="@drawable/ic_three_view_one"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -211,8 +206,7 @@
                     android:gravity="center"
                     android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -224,9 +218,9 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/threeLayoutTwo"
+                        android:id="@+id/ivThreeByThreeTwo"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ic_view_two"
+                        android:src="@drawable/ic_three_view_two"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -235,10 +229,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -250,7 +242,7 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/threeLayoutThree"
+                        android:id="@+id/ivThreeByThreeThree"
                         android:layout_width="wrap_content"
                         android:src="@drawable/ic_view_three"
                         android:layout_height="wrap_content" />
@@ -262,6 +254,7 @@
 
             <LinearLayout
                 android:id="@+id/fourUploads"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -269,8 +262,7 @@
                     android:layout_width="wrap_content"
                     android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -282,9 +274,9 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/fourLayoutOne"
+                        android:id="@+id/ivFourByFourOne"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ic_view_one"
+                        android:src="@drawable/ic_four_view_1"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -295,8 +287,7 @@
                     android:gravity="center"
                     android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -308,9 +299,9 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/fourLayoutTwo"
+                        android:id="@+id/ivFourByFourTwo"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ic_view_two"
+                        android:src="@drawable/ic_four_view_2"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -319,10 +310,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -334,7 +323,7 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/fourLayoutThree"
+                        android:id="@+id/ivFourByFourThree"
                         android:layout_width="wrap_content"
                         android:src="@drawable/ic_view_three"
                         android:layout_height="wrap_content" />
@@ -346,6 +335,7 @@
 
             <LinearLayout
                 android:id="@+id/fiveUploads"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -354,8 +344,7 @@
                     android:layout_width="wrap_content"
                     android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -367,9 +356,9 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/imgFiveLayoutOne"
+                        android:id="@+id/ivFiveByFiveOne"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ic_view_one"
+                        android:src="@drawable/ic_five_view_1"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -381,8 +370,7 @@
                     android:gravity="center"
                     android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -394,9 +382,9 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/imgFiveLayoutTwo"
+                        android:id="@+id/ivFiveByFiveTwo"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ic_view_two"
+                        android:src="@drawable/ic_five_view_2"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -406,10 +394,8 @@
                     android:id="@+id/fiveLayoutThree"
                     android:layout_width="wrap_content"
                     android:gravity="center"
-                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:showDividers="middle">
+                    android:orientation="vertical">
 
                     <TextView
                         style="@style/latoSemiBoldFontStyle"
@@ -421,7 +407,7 @@
                         android:textSize="16sp" />
 
                     <ImageView
-                        android:id="@+id/imgFiveLayoutThree"
+                        android:id="@+id/ivFiveByFiveThree"
                         android:layout_width="wrap_content"
                         android:src="@drawable/ic_view_three"
                         android:layout_height="wrap_content" />
@@ -431,33 +417,242 @@
             </LinearLayout>
 
 
-
-
         </LinearLayout>
 
         <!-- RecyclerView or Static Grid -->
 
-        <LinearLayout
-            android:id="@+id/media_container"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imageRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_image" />
 
-            <GridLayout
-                android:id="@+id/media_grid"
+
+        <LinearLayout
+            android:id="@+id/threeItemGridLayoutViewOne"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/threeItemGridLayoutViewOneItemOne"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/sample_image"
+                android:scaleType="centerCrop" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="match_parent"> <!-- Change this line -->
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewOneItemTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewOneItemThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/threeItemGridLayoutViewTwo"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/threeItemGridLayoutViewTwoItemOne"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="3"
-                android:rowCount="2" />
+                android:layout_margin="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/sample_image"
+                android:scaleType="centerCrop" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_height="0dp">
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewTwoItemTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewTwoItemThree"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
         </LinearLayout>
 
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/media_view_pager"
+        <LinearLayout
+            android:id="@+id/fourItemGridLayoutViewTwo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@color/white"
             android:layout_marginTop="20dp"
-            android:visibility="gone" />
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/fourItemGridLayoutViewTwoItemOne"
+                android:layout_width="match_parent"
+                android:layout_margin="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:src="@drawable/sample_image"
+                android:scaleType="centerCrop" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_height="0dp">
+
+                <ImageView
+                    android:id="@+id/fourItemGridLayoutViewTwoItemTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/fourItemGridLayoutViewTwoItemThree"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/fourItemGridLayoutViewTwoItemFour"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/fiveItemGridLayoutViewTwo"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_height="200dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1.5"
+                android:orientation="horizontal"
+                android:layout_height="0dp">
+
+                <ImageView
+                    android:id="@+id/fiveItemGridLayoutViewTwoItemOne"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/fiveItemGridLayoutViewTwoItemTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_height="0dp">
+
+                <ImageView
+                    android:id="@+id/fiveItemGridLayoutViewTwoItemThree"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/fiveItemGridLayoutViewTwoItemFour"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/fiveItemGridLayoutViewTwoItemFive"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
     </LinearLayout>
 </ScrollView>
+

@@ -2,6 +2,7 @@ package com.synapse.joyers.ui.ui.home.adapters
 
 import android.content.res.Resources
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,12 +52,14 @@ class ImageAdapter(
             }
         }
 
-        // Apply dynamic size/margin
-        val closeIconLayoutParams = holder.closeIcon.layoutParams as ViewGroup.MarginLayoutParams
+//        // Apply dynamic size/margin
+//        val closeIconLayoutParams = holder.closeIcon.layoutParams as ViewGroup.MarginLayoutParams
+//
+//        Log.e("TAG", "onBindViewHolder: $closeIconMargin")
+//        closeIconLayoutParams.setMargins(closeIconMargin, closeIconMargin, closeIconMargin, closeIconMargin)
+//        holder.closeIcon.layoutParams = closeIconLayoutParams
 
-        Log.e("TAG", "onBindViewHolder: $closeIconMargin")
-        closeIconLayoutParams.setMargins(closeIconMargin, closeIconMargin, closeIconMargin, closeIconMargin)
-        holder.closeIcon.layoutParams = closeIconLayoutParams
+        setCloseIconMargin(holder.closeIcon, closeIconMargin)
 
         if (position == mediaItems.size - 1 && overlayCount > 0) {
             holder.overlayText.visibility = View.VISIBLE
@@ -97,6 +100,12 @@ class ImageAdapter(
         notifyDataSetChanged()
     }
 }
+private fun setCloseIconMargin(view: View, marginDp: Int) {
+    val layoutParams = view.layoutParams as ViewGroup.MarginLayoutParams
+    layoutParams.setMargins(marginDp, marginDp, marginDp, marginDp)
+    view.layoutParams = layoutParams
+}
+
 
 // Helper function for dp to px conversion
 fun dpToPx(dp: Int): Int {

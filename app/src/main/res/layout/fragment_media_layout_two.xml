@@ -433,19 +433,55 @@
             android:id="@+id/threeItemGridLayoutViewOne"
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:visibility="gone"
             android:background="@color/white"
+            android:visibility="gone"
             android:layout_marginTop="20dp"
             android:layout_height="200dp">
 
-            <ImageView
-                android:id="@+id/threeItemGridLayoutViewOneItemOne"
+            <FrameLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_margin="1dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/sample_image"
-                android:scaleType="centerCrop" />
+                android:layout_margin="1dp">
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewOneItemOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/threeItemGridLayoutViewOneItemOneOverlayText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:background="#88000000"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewOneItemOneCloseIcon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="top|end"
+                    android:src="@drawable/ic_close"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewOneItemOnePlayIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:background="@drawable/white_circle"
+                    android:src="@drawable/ic_play_circle"
+                    android:padding="10dp" />
+
+            </FrameLayout>
+
+
 
 
             <LinearLayout
@@ -454,23 +490,94 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent"> <!-- Change this line -->
 
-                <ImageView
-                    android:id="@+id/threeItemGridLayoutViewOneItemTwo"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
 
-                <ImageView
-                    android:id="@+id/threeItemGridLayoutViewOneItemThree"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
+                    android:layout_height="0dp"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewOneItemTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/threeItemGridLayoutViewOneItemTwoOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewOneItemTwoCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewOneItemTwoPlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
+
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewOneItemThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/threeItemGridLayoutViewOneItemThreeOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewOneItemThreeCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewOneItemThreePlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
 
             </LinearLayout>
         </LinearLayout>
@@ -484,15 +591,49 @@
             android:layout_marginTop="20dp"
             android:layout_height="200dp">
 
-            <ImageView
-                android:id="@+id/threeItemGridLayoutViewTwoItemOne"
-                android:layout_width="match_parent"
-                android:layout_margin="1dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:src="@drawable/sample_image"
-                android:scaleType="centerCrop" />
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:layout_margin="1dp">
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewTwoItemOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/threeItemGridLayoutViewTwoItemOneOverlayText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:background="#88000000"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewTwoItemOneCloseIcon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="top|end"
+                    android:src="@drawable/ic_close"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/threeItemGridLayoutViewTwoItemOnePlayIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:background="@drawable/white_circle"
+                    android:src="@drawable/ic_play_circle"
+                    android:padding="10dp" />
+
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -500,23 +641,95 @@
                 android:orientation="horizontal"
                 android:layout_height="0dp">
 
-                <ImageView
-                    android:id="@+id/threeItemGridLayoutViewTwoItemTwo"
+                <FrameLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
 
-                <ImageView
-                    android:id="@+id/threeItemGridLayoutViewTwoItemThree"
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewTwoItemTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/threeItemGridLayoutViewTwoItemTwoOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewTwoItemTwoCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewTwoItemTwoPlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
+
+
+
+                <FrameLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewTwoItemThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/threeItemGridLayoutViewTwoItemThreeOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewTwoItemThreeCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/threeItemGridLayoutViewTwoItemThreePlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
+
+
 
             </LinearLayout>
         </LinearLayout>
@@ -526,19 +739,55 @@
             android:id="@+id/fourItemGridLayoutViewTwo"
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:visibility="gone"
             android:background="@color/white"
+            android:visibility="gone"
             android:layout_marginTop="20dp"
             android:layout_height="200dp">
 
-            <ImageView
-                android:id="@+id/fourItemGridLayoutViewTwoItemOne"
+
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_margin="1dp"
+                android:layout_weight="1"
                 android:layout_height="0dp"
-                android:layout_weight="1.5"
-                android:src="@drawable/sample_image"
-                android:scaleType="centerCrop" />
+                android:layout_margin="1dp">
+
+                <ImageView
+                    android:id="@+id/fourItemGridLayoutViewTwoItemOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:src="@drawable/sample_image"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/fourItemGridLayoutViewTwoItemOneOverlayText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:background="#88000000"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/fourItemGridLayoutViewTwoItemOneCloseIcon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="top|end"
+                    android:src="@drawable/ic_close"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/fourItemGridLayoutViewTwoItemOnePlayIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:background="@drawable/white_circle"
+                    android:src="@drawable/ic_play_circle"
+                    android:padding="10dp" />
+
+            </FrameLayout>
 
 
             <LinearLayout
@@ -547,32 +796,135 @@
                 android:orientation="horizontal"
                 android:layout_height="0dp">
 
-                <ImageView
-                    android:id="@+id/fourItemGridLayoutViewTwoItemTwo"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
 
-                <ImageView
-                    android:id="@+id/fourItemGridLayoutViewTwoItemThree"
+                <FrameLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
 
-                <ImageView
-                    android:id="@+id/fourItemGridLayoutViewTwoItemFour"
+                    <ImageView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemTwoOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemTwoCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemTwoPlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
+
+                <FrameLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemThreeOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemThreeCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemThreePlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemFour"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemFourOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemFourCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/fourItemGridLayoutViewTwoItemFourPlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
 
             </LinearLayout>
         </LinearLayout>
@@ -582,8 +934,8 @@
             android:id="@+id/fiveItemGridLayoutViewTwo"
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:visibility="gone"
             android:background="@color/white"
+            android:visibility="gone"
             android:layout_marginTop="20dp"
             android:layout_height="200dp">
 
@@ -593,23 +945,94 @@
                 android:orientation="horizontal"
                 android:layout_height="0dp">
 
-                <ImageView
-                    android:id="@+id/fiveItemGridLayoutViewTwoItemOne"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
 
-                <ImageView
-                    android:id="@+id/fiveItemGridLayoutViewTwoItemTwo"
+                <FrameLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemOneOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemOneCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemOnePlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemTwoOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemTwoCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemTwoPlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
+
 
 
             </LinearLayout>
@@ -622,32 +1045,134 @@
                 android:orientation="horizontal"
                 android:layout_height="0dp">
 
-                <ImageView
-                    android:id="@+id/fiveItemGridLayoutViewTwoItemThree"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
 
-                <ImageView
-                    android:id="@+id/fiveItemGridLayoutViewTwoItemFour"
+                <FrameLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
 
-                <ImageView
-                    android:id="@+id/fiveItemGridLayoutViewTwoItemFive"
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+                    <TextView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemThreeOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemThreeCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemThreePlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="1dp"
-                    android:src="@drawable/sample_image"
-                    android:scaleType="centerCrop" />
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemFour"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+                    <TextView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemFourOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemFourCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemFourPlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemFive"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sample_image"
+                        android:scaleType="centerCrop" />
+                    <TextView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemFiveOverlayText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:background="#88000000"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemFiveCloseIcon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="top|end"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/fiveItemGridLayoutViewTwoItemFivePlayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        android:background="@drawable/white_circle"
+                        android:src="@drawable/ic_play_circle"
+                        android:padding="10dp" />
+
+                </FrameLayout>
 
             </LinearLayout>
         </LinearLayout>

@@ -37,6 +37,4 @@
         android:src="@drawable/ic_play_circle"
         android:padding="10dp" />
 
-
-
 </FrameLayout>

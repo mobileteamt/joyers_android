@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.media.MediaMetadataRetriever
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.synapse.joyers.R
@@ -60,28 +62,110 @@ class MediaLayoutTwoFragment : Fragment() {
     private lateinit var fourItemGridLayoutViewTwo: LinearLayout
     private lateinit var fiveItemGridLayoutViewTwo: LinearLayout
 
-
+    //threeItemGridLayoutViewOneItemOne
     private lateinit var threeItemGridLayoutViewOneItemOne: ImageView
+
+    private lateinit var threeItemGridLayoutViewOneItemOneCloseIcon: ImageView
+    private lateinit var threeItemGridLayoutViewOneItemOneOverlayText: TextView
+    private lateinit var threeItemGridLayoutViewOneItemOnePlayIcon: ImageView
+
+    //threeItemGridLayoutViewOneItemTwo
     private lateinit var threeItemGridLayoutViewOneItemTwo: ImageView
+
+    private lateinit var threeItemGridLayoutViewOneItemTwoCloseIcon: ImageView
+    private lateinit var threeItemGridLayoutViewOneItemTwoOverlayText: TextView
+    private lateinit var threeItemGridLayoutViewOneItemTwoPlayIcon: ImageView
+
+    //threeItemGridLayoutViewOneItemThree
     private lateinit var threeItemGridLayoutViewOneItemThree: ImageView
 
+    private lateinit var threeItemGridLayoutViewOneItemThreeCloseIcon: ImageView
+    private lateinit var threeItemGridLayoutViewOneItemThreeOverlayText: TextView
+    private lateinit var threeItemGridLayoutViewOneItemThreePlayIcon: ImageView
+
+    //threeItemGridLayoutViewTwoItemOne
     private lateinit var threeItemGridLayoutViewTwoItemOne: ImageView
+
+    private lateinit var threeItemGridLayoutViewTwoItemOneCloseIcon: ImageView
+    private lateinit var threeItemGridLayoutViewTwoItemOneOverlayText: TextView
+    private lateinit var threeItemGridLayoutViewTwoItemOnePlayIcon: ImageView
+
+    //threeItemGridLayoutViewTwoItemTwo
     private lateinit var threeItemGridLayoutViewTwoItemTwo: ImageView
+
+    private lateinit var threeItemGridLayoutViewTwoItemTwoCloseIcon: ImageView
+    private lateinit var threeItemGridLayoutViewTwoItemTwoOverlayText: TextView
+    private lateinit var threeItemGridLayoutViewTwoItemTwoPlayIcon: ImageView
+
+    //threeItemGridLayoutViewTwoItemThree
     private lateinit var threeItemGridLayoutViewTwoItemThree: ImageView
 
+    private lateinit var threeItemGridLayoutViewTwoItemThreeCloseIcon: ImageView
+    private lateinit var threeItemGridLayoutViewTwoItemThreeOverlayText: TextView
+    private lateinit var threeItemGridLayoutViewTwoItemThreePlayIcon: ImageView
 
+    //fourItemGridLayoutViewTwoItemOne
     private lateinit var fourItemGridLayoutViewTwoItemOne: ImageView
+
+    private lateinit var fourItemGridLayoutViewTwoItemOneCloseIcon: ImageView
+    private lateinit var fourItemGridLayoutViewTwoItemOneOverlayText: TextView
+    private lateinit var fourItemGridLayoutViewTwoItemOnePlayIcon: ImageView
+
+    //fourItemGridLayoutViewTwoItemTwo
     private lateinit var fourItemGridLayoutViewTwoItemTwo: ImageView
+
+    private lateinit var fourItemGridLayoutViewTwoItemTwoCloseIcon: ImageView
+    private lateinit var fourItemGridLayoutViewTwoItemTwoOverlayText: TextView
+    private lateinit var fourItemGridLayoutViewTwoItemTwoPlayIcon: ImageView
+
+    //fourItemGridLayoutViewTwoItemThree
     private lateinit var fourItemGridLayoutViewTwoItemThree: ImageView
+
+    private lateinit var fourItemGridLayoutViewTwoItemThreeCloseIcon: ImageView
+    private lateinit var fourItemGridLayoutViewTwoItemThreeOverlayText: TextView
+    private lateinit var fourItemGridLayoutViewTwoItemThreePlayIcon: ImageView
+
+    //fourItemGridLayoutViewTwoItemFour
     private lateinit var fourItemGridLayoutViewTwoItemFour: ImageView
 
+    private lateinit var fourItemGridLayoutViewTwoItemFourCloseIcon: ImageView
+    private lateinit var fourItemGridLayoutViewTwoItemFourOverlayText: TextView
+    private lateinit var fourItemGridLayoutViewTwoItemFourPlayIcon: ImageView
+
+    //fiveItemGridLayoutViewTwoItemOne
     private lateinit var fiveItemGridLayoutViewTwoItemOne: ImageView
+
+    private lateinit var fiveItemGridLayoutViewTwoItemOneCloseIcon: ImageView
+    private lateinit var fiveItemGridLayoutViewTwoItemOneOverlayText: TextView
+    private lateinit var fiveItemGridLayoutViewTwoItemOnePlayIcon: ImageView
+
+    //fiveItemGridLayoutViewTwoItemTwo
     private lateinit var fiveItemGridLayoutViewTwoItemTwo: ImageView
+
+    private lateinit var fiveItemGridLayoutViewTwoItemTwoCloseIcon: ImageView
+    private lateinit var fiveItemGridLayoutViewTwoItemTwoOverlayText: TextView
+    private lateinit var fiveItemGridLayoutViewTwoItemTwoPlayIcon: ImageView
+
+    //fiveItemGridLayoutViewTwoItemThree
     private lateinit var fiveItemGridLayoutViewTwoItemThree: ImageView
+
+    private lateinit var fiveItemGridLayoutViewTwoItemThreeCloseIcon: ImageView
+    private lateinit var fiveItemGridLayoutViewTwoItemThreeOverlayText: TextView
+    private lateinit var fiveItemGridLayoutViewTwoItemThreePlayIcon: ImageView
+
+    //fiveItemGridLayoutViewTwoItemFour
     private lateinit var fiveItemGridLayoutViewTwoItemFour: ImageView
+
+    private lateinit var fiveItemGridLayoutViewTwoItemFourCloseIcon: ImageView
+    private lateinit var fiveItemGridLayoutViewTwoItemFourOverlayText: TextView
+    private lateinit var fiveItemGridLayoutViewTwoItemFourPlayIcon: ImageView
+
+    //fiveItemGridLayoutViewTwoItemFive
     private lateinit var fiveItemGridLayoutViewTwoItemFive: ImageView
 
-
+    private lateinit var fiveItemGridLayoutViewTwoItemFiveCloseIcon: ImageView
+    private lateinit var fiveItemGridLayoutViewTwoItemFiveOverlayText: TextView
+    private lateinit var fiveItemGridLayoutViewTwoItemFivePlayIcon: ImageView
 
     // Your sample images (put actual URLs)
     sealed class MediaItem {
@@ -281,6 +365,86 @@ class MediaLayoutTwoFragment : Fragment() {
             fiveItemGridLayoutViewTwoItemFour = findViewById(R.id.fiveItemGridLayoutViewTwoItemFour)
             fiveItemGridLayoutViewTwoItemFive = findViewById(R.id.fiveItemGridLayoutViewTwoItemFive)
 
+
+
+            //threeItemGridLayoutViewOneItemOne
+            threeItemGridLayoutViewOneItemOneCloseIcon = findViewById(R.id.threeItemGridLayoutViewOneItemOneCloseIcon)
+            threeItemGridLayoutViewOneItemOneOverlayText= findViewById(R.id.threeItemGridLayoutViewOneItemOneOverlayText)
+            threeItemGridLayoutViewOneItemOnePlayIcon= findViewById(R.id.threeItemGridLayoutViewOneItemOnePlayIcon)
+
+            //threeItemGridLayoutViewOneItemTwo
+            threeItemGridLayoutViewOneItemTwoCloseIcon= findViewById(R.id.threeItemGridLayoutViewOneItemTwoCloseIcon)
+            threeItemGridLayoutViewOneItemTwoOverlayText= findViewById(R.id.threeItemGridLayoutViewOneItemTwoOverlayText)
+            threeItemGridLayoutViewOneItemTwoPlayIcon= findViewById(R.id.threeItemGridLayoutViewOneItemTwoPlayIcon)
+
+            //threeItemGridLayoutViewOneItemThree
+            threeItemGridLayoutViewOneItemThreeCloseIcon= findViewById(R.id.threeItemGridLayoutViewOneItemThreeCloseIcon)
+            threeItemGridLayoutViewOneItemThreeOverlayText= findViewById(R.id.threeItemGridLayoutViewOneItemThreeOverlayText)
+            threeItemGridLayoutViewOneItemThreePlayIcon= findViewById(R.id.threeItemGridLayoutViewOneItemThreePlayIcon)
+
+            //threeItemGridLayoutViewTwoItemOne
+            threeItemGridLayoutViewTwoItemOneCloseIcon= findViewById(R.id.threeItemGridLayoutViewTwoItemOneCloseIcon)
+            threeItemGridLayoutViewTwoItemOneOverlayText= findViewById(R.id.threeItemGridLayoutViewTwoItemOneOverlayText)
+            threeItemGridLayoutViewTwoItemOnePlayIcon= findViewById(R.id.threeItemGridLayoutViewTwoItemOnePlayIcon)
+
+            //threeItemGridLayoutViewTwoItemTwo
+            threeItemGridLayoutViewTwoItemTwoCloseIcon= findViewById(R.id.threeItemGridLayoutViewTwoItemTwoCloseIcon)
+            threeItemGridLayoutViewTwoItemTwoOverlayText= findViewById(R.id.threeItemGridLayoutViewTwoItemTwoOverlayText)
+            threeItemGridLayoutViewTwoItemTwoPlayIcon= findViewById(R.id.threeItemGridLayoutViewTwoItemTwoPlayIcon)
+
+            //threeItemGridLayoutViewTwoItemThree
+            threeItemGridLayoutViewTwoItemThreeCloseIcon= findViewById(R.id.threeItemGridLayoutViewTwoItemThreeCloseIcon)
+            threeItemGridLayoutViewTwoItemThreeOverlayText= findViewById(R.id.threeItemGridLayoutViewTwoItemThreeOverlayText)
+            threeItemGridLayoutViewTwoItemThreePlayIcon= findViewById(R.id.threeItemGridLayoutViewTwoItemThreePlayIcon)
+
+            //fourItemGridLayoutViewTwoItemOne
+            fourItemGridLayoutViewTwoItemOneCloseIcon= findViewById(R.id.fourItemGridLayoutViewTwoItemOneCloseIcon)
+            fourItemGridLayoutViewTwoItemOneOverlayText= findViewById(R.id.fourItemGridLayoutViewTwoItemOneOverlayText)
+            fourItemGridLayoutViewTwoItemOnePlayIcon= findViewById(R.id.fourItemGridLayoutViewTwoItemOnePlayIcon)
+
+            //fourItemGridLayoutViewTwoItemTwo
+            fourItemGridLayoutViewTwoItemTwoCloseIcon= findViewById(R.id.fourItemGridLayoutViewTwoItemTwoCloseIcon)
+            fourItemGridLayoutViewTwoItemTwoOverlayText= findViewById(R.id.fourItemGridLayoutViewTwoItemTwoOverlayText)
+            fourItemGridLayoutViewTwoItemTwoPlayIcon= findViewById(R.id.fourItemGridLayoutViewTwoItemTwoPlayIcon)
+
+            //fourItemGridLayoutViewTwoItemThree
+            fourItemGridLayoutViewTwoItemThreeCloseIcon= findViewById(R.id.fourItemGridLayoutViewTwoItemThreeCloseIcon)
+            fourItemGridLayoutViewTwoItemThreeOverlayText= findViewById(R.id.fourItemGridLayoutViewTwoItemThreeOverlayText)
+            fourItemGridLayoutViewTwoItemThreePlayIcon= findViewById(R.id.fourItemGridLayoutViewTwoItemThreePlayIcon)
+
+            //fourItemGridLayoutViewTwoItemFour
+            fourItemGridLayoutViewTwoItemFourCloseIcon= findViewById(R.id.fourItemGridLayoutViewTwoItemFourCloseIcon)
+            fourItemGridLayoutViewTwoItemFourOverlayText= findViewById(R.id.fourItemGridLayoutViewTwoItemFourOverlayText)
+            fourItemGridLayoutViewTwoItemFourPlayIcon= findViewById(R.id.fourItemGridLayoutViewTwoItemFourPlayIcon)
+
+            //fiveItemGridLayoutViewTwoItemOne
+            fiveItemGridLayoutViewTwoItemOneCloseIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemOneCloseIcon)
+            fiveItemGridLayoutViewTwoItemOneOverlayText= findViewById(R.id.fiveItemGridLayoutViewTwoItemOneOverlayText)
+            fiveItemGridLayoutViewTwoItemOnePlayIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemOnePlayIcon)
+
+            //fiveItemGridLayoutViewTwoItemTwo
+            fiveItemGridLayoutViewTwoItemTwoCloseIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemTwoCloseIcon)
+            fiveItemGridLayoutViewTwoItemTwoOverlayText= findViewById(R.id.fiveItemGridLayoutViewTwoItemTwoOverlayText)
+            fiveItemGridLayoutViewTwoItemTwoPlayIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemTwoPlayIcon)
+
+            //fiveItemGridLayoutViewTwoItemThree
+            fiveItemGridLayoutViewTwoItemThreeCloseIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemThreeCloseIcon)
+            fiveItemGridLayoutViewTwoItemThreeOverlayText= findViewById(R.id.fiveItemGridLayoutViewTwoItemThreeOverlayText)
+            fiveItemGridLayoutViewTwoItemThreePlayIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemThreePlayIcon)
+
+            //fiveItemGridLayoutViewTwoItemFour
+            fiveItemGridLayoutViewTwoItemFourCloseIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemFourCloseIcon)
+            fiveItemGridLayoutViewTwoItemFourOverlayText= findViewById(R.id.fiveItemGridLayoutViewTwoItemFourOverlayText)
+            fiveItemGridLayoutViewTwoItemFourPlayIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemFourPlayIcon)
+
+            //fiveItemGridLayoutViewTwoItemFive
+            fiveItemGridLayoutViewTwoItemFiveCloseIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemFiveCloseIcon)
+            fiveItemGridLayoutViewTwoItemFiveOverlayText= findViewById(R.id.fiveItemGridLayoutViewTwoItemFiveOverlayText)
+            fiveItemGridLayoutViewTwoItemFivePlayIcon= findViewById(R.id.fiveItemGridLayoutViewTwoItemFivePlayIcon)
+
+
+
+
         }
 
         val drawableMap = mapOf(
@@ -370,7 +534,45 @@ class MediaLayoutTwoFragment : Fragment() {
 
     private fun onTabSelected(mediaType: MediaLayoutType) {
         updateRecyclerViewLayout(mediaType)
+
+        setMarginOnCloseButton(mediaType)
     }
+
+    private fun setMarginOnCloseButton(type: MediaLayoutType) {
+
+        val isFullLayoutSelected = type == MediaLayoutType.FULL
+        val marginValue = if (isFullLayoutSelected) 15 else 10
+
+        val closeIcons = listOf(
+            threeItemGridLayoutViewOneItemOneCloseIcon,
+            threeItemGridLayoutViewOneItemTwoCloseIcon,
+            threeItemGridLayoutViewOneItemThreeCloseIcon,
+            threeItemGridLayoutViewTwoItemOneCloseIcon,
+            threeItemGridLayoutViewTwoItemTwoCloseIcon,
+            threeItemGridLayoutViewTwoItemThreeCloseIcon,
+            fourItemGridLayoutViewTwoItemOneCloseIcon,
+            fourItemGridLayoutViewTwoItemTwoCloseIcon,
+            fourItemGridLayoutViewTwoItemThreeCloseIcon,
+            fourItemGridLayoutViewTwoItemFourCloseIcon,
+            fiveItemGridLayoutViewTwoItemOneCloseIcon,
+            fiveItemGridLayoutViewTwoItemTwoCloseIcon,
+            fiveItemGridLayoutViewTwoItemThreeCloseIcon,
+            fiveItemGridLayoutViewTwoItemFourCloseIcon,
+            fiveItemGridLayoutViewTwoItemFiveCloseIcon
+        )
+
+        closeIcons.forEach { icon ->
+            Log.e("TAG", "setMarginOnCloseButton: "+marginValue )
+            setCloseIconMargin(icon, marginValue)
+        }
+    }
+
+    private fun setCloseIconMargin(view: View, marginDp: Int) {
+        val layoutParams = view.layoutParams as ViewGroup.MarginLayoutParams
+        layoutParams.setMargins(marginDp, marginDp, marginDp, marginDp)
+        view.layoutParams = layoutParams
+    }
+
 
 
     private fun setupTabs(tabContainer: LinearLayout) {
@@ -525,7 +727,15 @@ class MediaLayoutTwoFragment : Fragment() {
         when (layoutType) {
             MediaLayoutType.FULL -> {
                 setViewVisibility(true, false, false, false, false)
-                recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+                recyclerView.onFlingListener = null // Clear any existing fling listener
+
+                val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                recyclerView.layoutManager = layoutManager
+
+                val snapHelper = LinearSnapHelper()
+                snapHelper.attachToRecyclerView(recyclerView)
+
                 updateHeight(recyclerView, totalHeightPx)
 
                 val displayItems = if (mediaCount > maxItemsToShow) mediaItems.take(maxItemsToShow) else mediaItems
